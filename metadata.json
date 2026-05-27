@@ -1,0 +1,6 @@
+{
+  "name": "Aetheria Studio",
+  "description": "Uma página de destino boutique e portfólio de beleza, cuidado da pele e bem-estar de alto padrão.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

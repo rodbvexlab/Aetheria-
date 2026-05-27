@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-hanken: "Hanken Grotesk", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-container: #f26522;
+  --color-on-primary-container: #4f1800;
+  --color-surface-container: #e9edff;
+  --color-surface-container-low: #f1f3ff;
+  --color-surface-container-high: #e1e8fd;
+  --color-surface-container-highest: #dce2f7;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-background: #141b2b;
+  --color-secondary: #4c635b;
+  --color-secondary-container: #c9e3d8;
+  --color-on-secondary-container: #4e665d;
+  --color-tertiary: #5d5f5f;
+  --color-on-tertiary: #ffffff;
+  --color-outline: #8d7166;
+  --color-outline-variant: #e1bfb3;
+  --color-primary: #a63b00;
+  --color-on-primary: #ffffff;
+  --color-background: #f9f9ff;
+  --color-surface: #f9f9ff;
+  --color-on-surface: #141b2b;
+  --color-on-surface-variant: #594138;
+  --color-surface-variant: #dce2f7;
+  --color-surface-dim: #d3daef;
+  --color-surface-bright: #f9f9ff;
+  --color-on-tertiary-fixed: #1a1c1c;
+  --color-on-tertiary-fixed-variant: #454747;
+  --color-tertiary-fixed-dim: #c6c6c7;
+  --color-tertiary-fixed: #e2e2e2;
+
+  --animate-blob: blob 7s infinite;
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+/* Custom CSS classes from template */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
+.text-roll-container {
+  height: 1.2em;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text-roll-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .text-roll-inner {
+  transform: translateY(-50%);
+}
